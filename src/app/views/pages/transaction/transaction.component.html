@@ -1,0 +1,177 @@
+<div class="row">
+  <div class="row">
+
+
+    <! SEARCH -->
+
+      <div class="input-group">
+      <div class="input-group-text">
+        <i class="feather icon-search"></i>
+      </div>
+      <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+    </div>
+
+    <div class="col-md-12">
+      <br>
+      <button class="btn btn-round btn-sm btn-success" (click)="open(mymodal1)">Add new Transaction</button>
+      <br><br>
+
+      <ng-template #mymodal1 let-modal1>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title" >Add new Transaction</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+            <span aria-hidden="true" (click)="cancel()">×</span>
+          </button>
+
+        </div>
+        <div class="container">
+          <form #f="ngForm" (ngSubmit)="addTransaction(transaction)">
+            <div class="row" class="col-md-6">
+              <input name ="account_id" type="number" required  ngModel #a="ngModel" placeholder="Account Id" [(ngModel)]="transaction.account_id" >
+            </div>
+            <div class="alert alert-danger" *ngIf="a.invalid && a.touched">the account id is a required field </div>
+
+            <div class="row" class="col-md-6">
+              <input name ="transaction_type" type="text"  placeholder="Transaction Type"[(ngModel)]="transaction.transaction_type" required ngModel #tt="ngModel"
+              pattern="[^ Transfer]*Transfer[^ Transfer]*|[^ Deposit]*Deposit[^ Deposit]*|[^ Payment]*Payment[^ Payment]*|[^ Withdrawal]*Withdrawal[^ Withdrawal]*">
+            </div>
+            <div class="alert alert-danger" *ngIf="tt.invalid && tt.touched">
+              <div *ngIf="tt.errors?.['required']"> the transaction type is a required field </div>
+              <div *ngIf="tt.errors?.['pattern']"> the transaction type is wrong </div>
+
+            </div>
+            <div class="row" class="col-md-6">
+              <input name ="amount" type="number" required  ngModel #am="ngModel" placeholder="Amount"[(ngModel)]="transaction.amount">
+            </div>
+            <div class="alert alert-danger" *ngIf="am.invalid && am.touched">amount is a required field </div>
+
+            <div class="row" class="col-md-6">
+              <input name ="source" type="text" required  ngModel #s="ngModel" placeholder="Source"[(ngModel)]="transaction.source">
+            </div>
+            <div class="alert alert-danger" *ngIf="s.invalid && s.touched">source is a required field </div>
+
+            <div class="row" class="col-md-6">
+              <input name ="status" type="text" required  ngModel #st="ngModel" placeholder="Status"[(ngModel)]="transaction.status">
+            </div>
+            <div class="alert alert-danger" *ngIf="st.invalid && st.touched">status is a required field </div>
+
+            <div class="row" class="col-md-6">
+              <input name ="reason_code" type="text" required  ngModel #rc="ngModel" placeholder="reason_code"[(ngModel)]="transaction.reason_code">
+            </div>
+            <div class="alert alert-danger" *ngIf="rc.invalid && rc.touched">the reason code is a required field </div>
+
+
+            <div class="row" class="col-md-6">
+             <input name ="created_at" type="text" required  ngModel #ca="ngModel" type="datetime-local" placeholder="created at"[(ngModel)]="transaction.created_at">
+            </div>
+            <div class="alert alert-danger" *ngIf="ca.invalid && ca.touched">created at is a required field </div>
+
+
+            <br>
+            <button type="submit" class="btn btn-success" [disabled]="f.invalid" (click)="modal1.close('Save click')" >Add</button>
+            <button type="button" class="btn btn-info" (click)="modal1.close('Save click')" >Cancel</button>
+          </form>
+        </div>
+      </ng-template>
+      <div class="row">
+        <div class="card" class="text-center">
+
+
+
+
+
+          <table class="table">
+            <thead style="background-color: rgb(192, 183, 183);">
+            <th>account_id</th>
+            <th>transaction_type</th>
+            <th>amount</th>
+            <th>source</th>
+            <th>status</th>
+            <th>reason code</th>
+            <th>created at</th>
+            </thead>
+            <tbody>
+            <tr *ngFor='let t of listTransactions| filter:term'>
+              <td>{{t.account_id}} </td>
+              <td>{{t.transaction_type}} </td>
+              <td>{{t.amount}} </td>
+              <td>{{t.source}} </td>
+              <td>{{t.status}} </td>
+              <td>{{t.reason_code}} </td>
+              <td>{{t.created_at}} </td>
+              <td><button type="button" class="btn btn-outline-primary"
+                          (click)="open(mymodal)">edit</button>
+                <ng-template #mymodal let-modal>
+                  <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+                    <button type="button" class="close" aria-label="Close"
+                            (click)="modal.dismiss('Cross click')">
+                      <span aria-hidden="true" (click)="cancel()">×</span>
+
+                    </button>
+
+                  </div>
+                  <div>
+                    <form >
+                      <div class="modal-body">
+
+                        <div class="row" class="col-md-5">
+                          <label>Account Id</label>
+                          <input type="number" [(ngModel)]="t.account_id" [ngModelOptions]="{standalone : true}" />
+                        </div>
+
+                        <div class="row" class="col-md-5">
+                          <label>Transaction Type</label>
+                          <input type="text" [(ngModel)]="t.transaction_type" [ngModelOptions]="{standalone : true}" />
+                        </div>
+
+                        <div class="row" class="col-md-5">
+                          <label>Amount</label>
+                          <input type="number" [(ngModel)]="t.amount" [ngModelOptions]="{standalone : true}" />
+                        </div>
+
+                        <div class="row" class="col-md-5">
+                          <label>source</label>
+                          <input type="text" [(ngModel)]="t.source" [ngModelOptions]="{standalone : true}" />
+                        </div>
+
+                        <div class="row" class="col-md-5">
+                          <label>Status</label>
+                          <input type="text" [(ngModel)]="t.status" [ngModelOptions]="{standalone : true}" />
+                        </div>
+
+                        <div class="row" class="col-md-5">
+                          <label>Reason Code</label>
+                          <input type="text" [(ngModel)]="t.reason_code" [ngModelOptions]="{standalone : true}" />
+                        </div>
+                        <div class="row" class="col-md-5">
+                          <label>Created At</label>
+                          <input type="text" [(ngModel)]="t.created_at" [ngModelOptions]="{standalone : true}" />
+                        </div>
+
+
+                      </div>
+
+                      <div class="modal-footer">
+
+                        <button type="button" class="btn btn-info" (click)="modal.close('Save click')" (click)="cancel()">Cancel</button>
+                        <button class="btn btn-success"(click)="editTransaction(t)" (click)="modal.close('Save click')">Validate</button>
+                      </div>
+                    </form>
+                  </div>
+                </ng-template>
+                <button type="button" class="btn btn-outline-danger"
+                        (click)="deleteTransaction(t.transaction_id)">delete</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

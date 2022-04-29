@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Transaction} from "./transaction";
-import {TransactionService} from "./transaction.service";
+import {Transaction} from "./shared/Model/transaction";
+import {TransactionService} from "./shared/Service/transaction.service";
 import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
@@ -14,3 +14,4 @@ export class AppComponent implements OnInit {
 
 
 }
+

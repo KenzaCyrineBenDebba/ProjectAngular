@@ -12,7 +12,6 @@ import { ErrorPageComponent } from './views/pages/error-page/error-page.componen
 
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { TransactionComponent } from './views/pages/transaction/transaction.component';
-import { ClaimComponent } from './views/pages/claim/claim.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
@@ -21,7 +20,7 @@ import {RouterModule, Routes} from "@angular/router";
 const routes: Routes = [
   {
     path: 'transaction',
-    component: TransactionComponent
+    component: TransactionComponent,
   }
 ]
 
@@ -58,3 +57,4 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

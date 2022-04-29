@@ -1,21 +1,31 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {Transaction} from "../../../transaction";
-import {TransactionService} from "../../../transaction.service";
+import {Transaction} from "../../../shared/Model/transaction";
+import {TransactionService} from "../../../shared/Service/transaction.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {NgForm} from "@angular/forms";
+import {Claim} from "../../../shared/Model/claim";
 
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
   styleUrls: ['./transaction.component.scss']
 })
+
 export class TransactionComponent implements OnInit {
   term: string;
   listTransactions:any;
   form:boolean=false;
   transaction!:Transaction;
   closeResult!: string;
+  claim!:Claim;
+  Transfer: any="Transfer";
+  Deposit: any="deposit";
+  Withdrawal: any="Withdrawal";
+  Payment: any="Payment";
+  success: string="success";
+  failed: string ="failed";
+
 
 
   constructor(private transactionService: TransactionService, private modalService: NgbModal){}
@@ -31,7 +41,8 @@ export class TransactionComponent implements OnInit {
       source:null,
       status:null,
       reason_code:null,
-      created_at:null
+      created_at:null,
+      claim:null,
     }
   }
   getTransactions(){

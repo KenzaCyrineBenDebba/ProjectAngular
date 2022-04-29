@@ -67,38 +67,63 @@
             <div class="alert alert-danger" *ngIf="ca.invalid && ca.touched">created at is a required field </div>
 
 
+
+
             <br>
             <button type="submit" class="btn btn-success" [disabled]="f.invalid" (click)="modal1.close('Save click')" >Add</button>
             <button type="button" class="btn btn-info" (click)="modal1.close('Save click')" >Cancel</button>
           </form>
         </div>
       </ng-template>
-      <div class="row">
-        <div class="card" class="text-center">
+      <div >
 
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-baseline mb-2">
+              <h6 class="card-title mb-0">Transactions List</h6>
+              <div ngbDropdown class="mb-2">
+              </div>
+            </div>
 
-
-
-
-          <table class="table">
-            <thead style="background-color: rgb(192, 183, 183);">
-            <th>account_id</th>
-            <th>transaction_type</th>
-            <th>amount</th>
-            <th>source</th>
-            <th>status</th>
-            <th>reason code</th>
-            <th>created at</th>
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead>
+            <th class="pt-0" >account_id</th>
+            <th class="pt-0">transaction_type</th>
+            <th class="pt-0">amount</th>
+            <th class="pt-0">source</th>
+            <th class="pt-0">status</th>
+            <th class="pt-0">reason code</th>
+            <th class="pt-0">created at</th>
+            <th class="pt-0">claim</th>
             </thead>
             <tbody>
             <tr *ngFor='let t of listTransactions| filter:term'>
               <td>{{t.account_id}} </td>
-              <td>{{t.transaction_type}} </td>
+              <div class="alert alert-danger" *ngIf="t.transaction_type==Transfer">
+                <td> <span class="badge bg-info"> {{t.transaction_type}} </span> </td></div>
+
+              <div class="alert alert-danger" *ngIf="t.transaction_type==Deposit">
+                <td> <span class="badge bg-primary"> {{t.transaction_type}} </span> </td></div>
+
+              <div class="alert alert-danger" *ngIf="t.transaction_type==Withdrawal">
+                <td> <span class="badge bg-danger"> {{t.transaction_type}} </span> </td></div>
+
+              <div class="alert alert-danger" *ngIf="t.transaction_type==Payment">
+                <td> <span class="badge bg-black"> {{t.transaction_type}} </span> </td></div>
+
               <td>{{t.amount}} </td>
               <td>{{t.source}} </td>
-              <td>{{t.status}} </td>
+
+              <div class="alert alert-danger" *ngIf="t.status==success">
+                <td> <span class="badge bg-success"> {{t.status}} </span> </td></div>
+              <div class="alert alert-danger" *ngIf="t.status==failed">
+                <td> <span class="badge bg-danger"> {{t.status}} </span> </td></div>
+
+
               <td>{{t.reason_code}} </td>
               <td>{{t.created_at}} </td>
+              <td>{{t.claim.claim_id}}</td>
               <td><button type="button" class="btn btn-outline-primary"
                           (click)="open(mymodal)">edit</button>
                 <ng-template #mymodal let-modal>
@@ -115,10 +140,12 @@
                     <form >
                       <div class="modal-body">
 
+
                         <div class="row" class="col-md-5">
                           <label>Account Id</label>
-                          <input type="number" [(ngModel)]="t.account_id" [ngModelOptions]="{standalone : true}" />
+                          <input type="number" ngModel [(ngModel)]="t.account_id" [ngModelOptions]="{standalone : true}" />
                         </div>
+
 
                         <div class="row" class="col-md-5">
                           <label>Transaction Type</label>
@@ -142,11 +169,15 @@
 
                         <div class="row" class="col-md-5">
                           <label>Reason Code</label>
-                          <input type="text" [(ngModel)]="t.reason_code" [ngModelOptions]="{standalone : true}" />
+                          <input type="text" [(ngModel)]="t.reason_code" [disabled]="true" [ngModelOptions]="{standalone : true}" />
                         </div>
                         <div class="row" class="col-md-5">
                           <label>Created At</label>
                           <input type="text" [(ngModel)]="t.created_at" [ngModelOptions]="{standalone : true}" />
+                        </div>
+                        <div class="row" class="col-md-5">
+                          <label>Claim</label>
+                          <input type="number" [disabled]="true" [(ngModel)]="t.claim.claim_id" [ngModelOptions]="{standalone : true}" />
                         </div>
 
 
@@ -166,6 +197,8 @@
             </tr>
             </tbody>
           </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

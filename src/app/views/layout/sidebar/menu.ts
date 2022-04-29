@@ -31,6 +31,29 @@ export const MENU: MenuItem[] = [
         link: '/apps/email/compose'
       },
     ]
+  },{
+    label: 'Transaction',
+    icon: 'arrow-right-circle',
+
+    subItems: [
+      {
+        label: 'Retrieve Transactions',
+        link: '/transaction',
+
+      },
+    ]
+  },
+  {
+    label: 'Claim',
+    icon: 'alert-triangle',
+
+    subItems: [
+      {
+        label: 'Retrieve Claims',
+        link: '/claim',
+
+      },
+    ]
   },
   {
     label: 'Chat',

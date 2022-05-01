@@ -1,34 +1,33 @@
-import {Component, HostListener, OnInit} from '@angular/core';
-import {Transaction} from "../../../shared/Model/transaction";
-import {TransactionService} from "../../../shared/Service/transaction.service";
-import {HttpErrorResponse} from "@angular/common/http";
-import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import { Component, OnInit } from '@angular/core';
 import {NgForm} from "@angular/forms";
+import {TransactionService} from "../../../shared/Service/transaction.service";
+import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {Transaction} from "../../../shared/Model/transaction";
 import {Claim} from "../../../shared/Model/claim";
 
 @Component({
-  selector: 'app-transaction',
-  templateUrl: './transaction.component.html',
-  styleUrls: ['./transaction.component.scss']
+  selector: 'app-transfer',
+  templateUrl: './transfer.component.html',
+  styleUrls: ['./transfer.component.scss']
 })
+export class TransferComponent implements OnInit {
 
-export class TransactionComponent implements OnInit {
-  term: string;
   listTransactions:any;
   form:boolean=false;
   transaction!:Transaction;
   closeResult!: string;
-  Transfer: any="Transfer";
-  Deposit: any="deposit";
-  Withdrawal: any="Withdrawal";
-  Payment: any="Payment";
+  claim!:Claim;
+  transfer: any="Transfer";
+  source: any="online";
   success: string="success";
   failed: string ="failed";
-  transaction_type: ({ transaction_type: string } | { transaction_type: string } | { transaction_type: string } | { transaction_type: string })[];
-
+  InsufficientFund: any="Insufficient Fund";
+  created_at:any="";
+  TransferSuccessful: any="transaction.reason_code";
 
 
   constructor(private transactionService: TransactionService, private modalService: NgbModal){}
+
   ngOnInit(): void {
     this.getTransactions();
     this.transaction= {
@@ -43,32 +42,23 @@ export class TransactionComponent implements OnInit {
       reason_code:null,
       created_at:null,
     }
-
-    this.transaction_type=[
-      {transaction_type:"Transfer"},
-      {transaction_type:"deposit"},
-      {transaction_type:"Withdrawal"},
-      {transaction_type:"Payment"}
-
-    ]
   }
+
   getTransactions(){
     this.transactionService.getTransactions().subscribe(res=>this.listTransactions=res)
   }
+
   addTransaction(t:any) {
     this.transactionService.addTransaction(t).subscribe(()=> {
-        this.getTransactions();
-        this.form = false;
-      });
-    }
+      this.getTransactions();
+      this.form = false;
+    });
+  }
 
-    editTransaction(transaction:Transaction){
-      this.transactionService.editTransaction(transaction).subscribe();
-      }
+  saveTransfer(f: NgForm){ //f de type ngForm
+    console.log(f.value['account_id'],f.value['transaction_type'], f.value['amount'],f.value['source'], f.value['status'],f.value['reason_code'], f.value['created_at']); //pour recuperer le contunu de differents input du form dans la partie console(inspecter)
+  }
 
-    deleteTransaction(transactionId:any){
-      this.transactionService.deleteTransaction(transactionId).subscribe(()=>this.getTransactions());
-      }
 
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -93,17 +83,4 @@ export class TransactionComponent implements OnInit {
     this.form = false;
   }
 
-  save(f: NgForm){ //f de type ngForm
-    console.log(f.value['account_id'],f.value['transaction_type'], f.value['amount'],f.value['source'], f.value['status'],f.value['reason_code'], f.value['created_at']); //pour recuperer le contunu de differents input du form dans la partie console(inspecter)
-  }
-
-
-  }
-
-
-
-
-
-
-
-
+}

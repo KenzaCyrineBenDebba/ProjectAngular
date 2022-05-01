@@ -4,41 +4,44 @@ import {ClaimService} from "../../../shared/Service/claim.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {NgForm} from "@angular/forms";
+import {Transaction} from "../../../shared/Model/transaction";
 
 @Component({
   selector: 'app-claim',
   templateUrl: './claim.component.html',
   styleUrls: ['./claim.component.scss']
 })
+
+
 export class ClaimComponent implements OnInit {
   term: string;
   listClaims:any;
   form:boolean=false;
   claim!:Claim;
   closeResult!: string;
+  transaction:Transaction[]=[];
+  transaction_type: ({ transaction_type: string } | { transaction_type: string } | { transaction_type: string } | { transaction_type: string })[];
+
+
+
 
 
   constructor(private claimService: ClaimService, private modalService: NgbModal){}
   ngOnInit(): void {
     this.getClaims();
-    this.claim= {
+    this.transaction_type=[
+      {transaction_type:"Transfer"},
+      {transaction_type:"deposit"},
+      {transaction_type:"Withdrawal"},
+      {transaction_type:"Payment"}
 
-      claim_id:null,
+    ]
 
-      account_id:null,
-      transaction_type:null,
-      amount:null,
-      source:null,
-      status:null,
-      reason_code:null,
-      created_at:null,
-      transaction:null,
-
-    }
   }
   getClaims(){
     this.claimService.getClaims().subscribe(res=>this.listClaims=res)
   }
+
   addClaim(t:any) {
     this.claimService.addClaim(t).subscribe(()=> {
       this.getClaims();
@@ -78,7 +81,7 @@ export class ClaimComponent implements OnInit {
   }
 
   save(f: NgForm){ //f de type ngForm
-    console.log(f.value['account_id'],f.value['claim_type'], f.value['amount'],f.value['source'], f.value['status'],f.value['reason_code'], f.value['created_at'],f.value['claim'],f.value['transaction']); //pour recuperer le contunu de differents input du form dans la partie console(inspecter)
+    console.log(f.value['account_id'],f.value['claim_type'], f.value['amount'],f.value['source'], f.value['status'],f.value['reason_code'], f.value['created_at'],f.value['claim'],f.value['transaction_id']); //pour recuperer le contunu de differents input du form dans la partie console(inspecter)
   }
 
 

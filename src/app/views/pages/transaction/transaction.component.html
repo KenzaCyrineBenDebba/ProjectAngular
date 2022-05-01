@@ -31,15 +31,13 @@
             </div>
             <div class="alert alert-danger" *ngIf="a.invalid && a.touched">the account id is a required field </div>
 
-            <div class="row" class="col-md-6">
-              <input name ="transaction_type" type="text"  placeholder="Transaction Type"[(ngModel)]="transaction.transaction_type" required ngModel #tt="ngModel"
-              pattern="[^ Transfer]*Transfer[^ Transfer]*|[^ Deposit]*Deposit[^ Deposit]*|[^ Payment]*Payment[^ Payment]*|[^ Withdrawal]*Withdrawal[^ Withdrawal]*">
+            <div class="row" class="col-md-5">
+              <select
+                      [(ngModel)]="transaction.transaction_type" [ngModelOptions]="{standalone : true}">
+                <option type="text" *ngFor="let transaction of transaction_type" [value]="transaction.transaction_type" > {{transaction.transaction_type}}
+              </select>
             </div>
-            <div class="alert alert-danger" *ngIf="tt.invalid && tt.touched">
-              <div *ngIf="tt.errors?.['required']"> the transaction type is a required field </div>
-              <div *ngIf="tt.errors?.['pattern']"> the transaction type is wrong </div>
 
-            </div>
             <div class="row" class="col-md-6">
               <input name ="amount" type="number" required  ngModel #am="ngModel" placeholder="Amount"[(ngModel)]="transaction.amount">
             </div>
@@ -88,6 +86,7 @@
             <div class="table-responsive">
               <table class="table table-hover mb-0">
                 <thead>
+
             <th class="pt-0" >account_id</th>
             <th class="pt-0">transaction_type</th>
             <th class="pt-0">amount</th>
@@ -95,10 +94,10 @@
             <th class="pt-0">status</th>
             <th class="pt-0">reason code</th>
             <th class="pt-0">created at</th>
-            <th class="pt-0">claim</th>
             </thead>
             <tbody>
             <tr *ngFor='let t of listTransactions| filter:term'>
+
               <td>{{t.account_id}} </td>
               <div class="alert alert-danger" *ngIf="t.transaction_type==Transfer">
                 <td> <span class="badge bg-info"> {{t.transaction_type}} </span> </td></div>
@@ -123,12 +122,11 @@
 
               <td>{{t.reason_code}} </td>
               <td>{{t.created_at}} </td>
-              <td>{{t.claim.claim_id}}</td>
               <td><button type="button" class="btn btn-outline-primary"
                           (click)="open(mymodal)">edit</button>
                 <ng-template #mymodal let-modal>
                   <div class="modal-header">
-                    <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+                    <h4 class="modal-title" >Edit</h4>
                     <button type="button" class="close" aria-label="Close"
                             (click)="modal.dismiss('Cross click')">
                       <span aria-hidden="true" (click)="cancel()">×</span>
@@ -149,7 +147,10 @@
 
                         <div class="row" class="col-md-5">
                           <label>Transaction Type</label>
-                          <input type="text" [(ngModel)]="t.transaction_type" [ngModelOptions]="{standalone : true}" />
+                          <select
+                            [(ngModel)]="t.transaction_type" [ngModelOptions]="{standalone : true}">
+                            <option type="text" *ngFor="let t of transaction_type" [value]="t.transaction_type" > {{t.transaction_type}}
+                          </select>
                         </div>
 
                         <div class="row" class="col-md-5">
@@ -175,10 +176,7 @@
                           <label>Created At</label>
                           <input type="text" [(ngModel)]="t.created_at" [ngModelOptions]="{standalone : true}" />
                         </div>
-                        <div class="row" class="col-md-5">
-                          <label>Claim</label>
-                          <input type="number" [disabled]="true" [(ngModel)]="t.claim.claim_id" [ngModelOptions]="{standalone : true}" />
-                        </div>
+
 
 
                       </div>

@@ -11,6 +11,5 @@ export class Transaction {
   status!:any;
   reason_code!:any;
   created_at!:any;
-  claim!:any;
 
 }

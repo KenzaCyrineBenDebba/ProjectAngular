@@ -41,6 +41,23 @@ export const MENU: MenuItem[] = [
         link: '/transaction',
 
       },
+      {
+        label: 'Transfer',
+        link: '/transfer'
+      }
+      ,
+      {
+        label: 'Deposit',
+        link: '/deposit'
+      },
+      {
+        label: 'Withdrawal',
+        link: '/withdrawal'
+      },
+      {
+        label: 'Payment',
+        link: '/payment'
+      }
     ]
   },
   {

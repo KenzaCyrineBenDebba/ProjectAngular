@@ -18,13 +18,13 @@ export class TransactionComponent implements OnInit {
   form:boolean=false;
   transaction!:Transaction;
   closeResult!: string;
-  claim!:Claim;
   Transfer: any="Transfer";
   Deposit: any="deposit";
   Withdrawal: any="Withdrawal";
   Payment: any="Payment";
   success: string="success";
   failed: string ="failed";
+  transaction_type: ({ transaction_type: string } | { transaction_type: string } | { transaction_type: string } | { transaction_type: string })[];
 
 
 
@@ -42,8 +42,15 @@ export class TransactionComponent implements OnInit {
       status:null,
       reason_code:null,
       created_at:null,
-      claim:null,
     }
+
+    this.transaction_type=[
+      {transaction_type:"Transfer"},
+      {transaction_type:"deposit"},
+      {transaction_type:"Withdrawal"},
+      {transaction_type:"Payment"}
+
+    ]
   }
   getTransactions(){
     this.transactionService.getTransactions().subscribe(res=>this.listTransactions=res)

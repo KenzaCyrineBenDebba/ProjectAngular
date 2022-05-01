@@ -28,16 +28,18 @@
             <th>status</th>
             <th>reason code</th>
             <th>created at</th>
+         <!--   <th class="pt-0">Transaction id</th>  -->
             </thead>
             <tbody>
             <tr *ngFor='let t of listClaims| filter:term'>
-              <td>{{t.account_id}} </td>
-              <td>{{t.transaction_type}} </td>
-              <td>{{t.amount}} </td>
-              <td>{{t.source}} </td>
-              <td><span class="badge bg-danger">{{t.status}}</span> </td>
-              <td>{{t.reason_code}} </td>
-              <td>{{t.created_at}} </td>
+              <td>{{t?.account_id}} </td>
+              <td>{{t?.transaction_type}} </td>
+              <td>{{t?.amount}} </td>
+              <td>{{t?.source}} </td>
+              <td><span class="badge bg-danger">{{t?.status}}</span> </td>
+              <td>{{t?.reason_code}} </td>
+              <td>{{t?.created_at}} </td>
+   <!--           <td>{{t?.transaction?.transaction_id}}</td>  -->
               <td><button type="button" class="btn btn-outline-primary"
                           (click)="open(mymodal)">edit</button>
                 <ng-template #mymodal let-modal>
@@ -61,7 +63,10 @@
 
                         <div class="row" class="col-md-5">
                           <label>Transaction Type</label>
-                          <input type="text" [(ngModel)]="t.transaction_type" [ngModelOptions]="{standalone : true}" />
+                          <select
+                            [(ngModel)]="t.transaction_type" [ngModelOptions]="{standalone : true}">
+                          <option type="text" *ngFor="let t of transaction_type" [value]="t.transaction_type" > {{t.transaction_type}}
+                          </select>
                         </div>
 
                         <div class="row" class="col-md-5">
@@ -87,6 +92,14 @@
                           <label>Created At</label>
                           <input type="text" [(ngModel)]="t.created_at" [ngModelOptions]="{standalone : true}" />
                         </div>
+
+                        <!--
+                        <div class="row" class="col-md-5">
+                          <label  class="col-form-label col-sm-2">Transaction</label><select [(ngModel)]="claim.transaction.transaction_id" [ngModelOptions]="{standalone : true}" class="form-control" name="transaction" >
+                          <option [disabled]="true" *ngFor="let transaction of transaction" [ngValue]="transaction.transaction_id"> {{transaction.transaction_id}} <!-- </option> -->
+                        <!--  </select>
+                        </div>
+                      -->
 
 
 

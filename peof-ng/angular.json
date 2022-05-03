@@ -36,7 +36,8 @@
                 "node_modules/jquery-nice-select/scss/nice-select.scss",
                 "src/assets/fonts/flaticon.css",
                 "src/styles.scss",
-                "src/responsive.scss"
+                "src/responsive.scss",
+                "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
                 "node_modules/jquery/dist/jquery.min.js",
@@ -116,7 +117,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+                "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": []
           }

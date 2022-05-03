@@ -36,10 +36,10 @@ import { BlogComponent } from './components/pages/blog/blog.component';
 import { DepositComponent } from './components/pages/deposit/deposit.component';
 import { WithdrawalComponent } from './components/pages/withdrawal/withdrawal.component';
 import { PaymentComponent } from './components/pages/payment/payment.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TransferComponent } from './components/pages/transfer/transfer.component';
-import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -75,10 +75,10 @@ import { FormsModule } from '@angular/forms';
     BlogDetailsComponent,
     BlogComponent,
 
-      TransferComponent,
     DepositComponent,
     WithdrawalComponent,
     PaymentComponent,
+      TransferComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +86,8 @@ import { FormsModule } from '@angular/forms';
       FormsModule,
 
       ReactiveFormsModule,
-      HttpClientModule
+      HttpClientModule,
+      NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

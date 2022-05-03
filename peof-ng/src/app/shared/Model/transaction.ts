@@ -1,6 +1,6 @@
 export class Transaction {
 
-  transaction_id:any;
+  transaction_id!:any;
 
   account_id!:any;
   transaction_type!:any;
@@ -16,14 +16,14 @@ export interface CashFLowModel{
     transactionObject :transactionObject
 }
 
-export interface transactionObject extends Transaction{
+export interface transactionObject {
     fromAccount:string
-    toAccount:string 
+    toAccount:string
     amount:number
 }
 
-//this.transaction_type = 'Transfer'
-//this.created_at = parseInt(moment().format('x'));
-//this.source = 'online'
-//this.status = 'success'
-//this.reason_code='Transfer Transaction Successful'
+// this.transaction_type = 'Transfer'
+// this.created_at = parseInt(moment().format('x'));
+// this.source = 'online'
+// this.status = 'success'
+// this.reason_code='Transfer Transaction Successful'

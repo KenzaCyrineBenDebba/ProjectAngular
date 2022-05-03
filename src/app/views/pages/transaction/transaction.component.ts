@@ -1,10 +1,8 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Transaction} from "../../../shared/Model/transaction";
 import {TransactionService} from "../../../shared/Service/transaction.service";
-import {HttpErrorResponse} from "@angular/common/http";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {NgForm} from "@angular/forms";
-import {Claim} from "../../../shared/Model/claim";
 
 @Component({
   selector: 'app-transaction',
@@ -96,7 +94,6 @@ export class TransactionComponent implements OnInit {
   save(f: NgForm){ //f de type ngForm
     console.log(f.value['account_id'],f.value['transaction_type'], f.value['amount'],f.value['source'], f.value['status'],f.value['reason_code'], f.value['created_at']); //pour recuperer le contunu de differents input du form dans la partie console(inspecter)
   }
-
 
   }
 

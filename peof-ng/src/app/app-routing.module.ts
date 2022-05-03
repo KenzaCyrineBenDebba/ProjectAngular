@@ -27,6 +27,10 @@ import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privac
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
+import { TransferComponent } from './components/pages/transfer/transfer.component';
+import { PaymentComponent } from './components/pages/payment/payment.component';
+import { DepositComponent } from './components/pages/deposit/deposit.component';
+import { WithdrawalComponent } from './components/pages/withdrawal/withdrawal.component';
 
 const routes: Routes = [
     {path: '', component: HomeOneComponent},
@@ -56,6 +60,11 @@ const routes: Routes = [
     {path: 'blog', component: BlogComponent},
     {path: 'blog-details', component: BlogDetailsComponent},
     {path: 'contact', component: ContactComponent},
+    {path: 'transfer', component: TransferComponent},
+    {path: 'deposit', component: DepositComponent},
+    {path: 'payment', component: PaymentComponent},
+    {path: 'withdrawal', component: WithdrawalComponent},
+
     // Here add new pages component
 
     {path: '**', component: ErrorComponent} // This line will remain down from the whole pages component list

@@ -60,10 +60,6 @@ const routes: Routes = [
         path: 'transaction',
         loadChildren: () => import('./views/pages/transaction/transaction.module').then(m => m.TransactionModule)
       },
-      {
-        path: 'transfer',
-        loadChildren: () => import('./views/pages/transfer/transfer.module').then(m => m.TransferModule)
-      },
       { path: '', redirectTo: 'transaction', pathMatch: 'full' },
       // { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }
 

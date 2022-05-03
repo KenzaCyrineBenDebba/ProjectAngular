@@ -1,4 +1,4 @@
-{
+{/*
   "extends": "tslint:recommended",
   "rules": {
     "align": {
@@ -151,5 +151,5 @@
   },
   "rulesDirectory": [
     "codelyzer"
-  ]
+  ] */
 }

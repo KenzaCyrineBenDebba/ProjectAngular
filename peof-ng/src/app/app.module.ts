@@ -33,6 +33,13 @@ import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privac
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
+import { DepositComponent } from './components/pages/deposit/deposit.component';
+import { WithdrawalComponent } from './components/pages/withdrawal/withdrawal.component';
+import { PaymentComponent } from './components/pages/payment/payment.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { TransferComponent } from './components/pages/transfer/transfer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -66,11 +73,20 @@ import { BlogComponent } from './components/pages/blog/blog.component';
     PrivacyPolicyComponent,
     ContactComponent,
     BlogDetailsComponent,
-    BlogComponent
+    BlogComponent,
+
+      TransferComponent,
+    DepositComponent,
+    WithdrawalComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+      FormsModule,
+
+      ReactiveFormsModule,
+      HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

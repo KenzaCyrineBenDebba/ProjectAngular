@@ -16,7 +16,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {RouterModule, Routes} from "@angular/router";
-import { TransferComponent } from './views/pages/transfer/transfer.component';
 
 const routes: Routes = [
   {
@@ -39,7 +38,8 @@ const routes: Routes = [
     LayoutModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+
   ],
   providers: [
     AuthGuard,

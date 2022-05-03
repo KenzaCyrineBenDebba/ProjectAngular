@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9769bc45-0a53-452d-82cc-f223971fecda" name="Changes" comment="update" />
+    <list default="true" id="9769bc45-0a53-452d-82cc-f223971fecda" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,10 +41,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="directory" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="javascript.karma.karma_node_package_dir" value="$USER_HOME$/node_modules/@angular/cli" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -50,7 +54,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
-    <property name="ts.external.directory.path" value="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\peof-ng\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -72,6 +76,7 @@
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Tests (nobleui-angular)" type="JavaScriptTestRunnerKarma">
       <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <karma-package-dir value="" />
       <working-directory value="$PROJECT_DIR$" />
       <node-interpreter value="project" />
       <envs />
@@ -110,7 +115,7 @@
       <workItem from="1651430898800" duration="50365000" />
       <workItem from="1651572705595" duration="6572000" />
       <workItem from="1651594617931" duration="120000" />
-      <workItem from="1651596404223" duration="537000" />
+      <workItem from="1651596404223" duration="798000" />
     </task>
     <task id="LOCAL-00001" summary="//">
       <created>1651259061299</created>
@@ -182,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651596794735</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <created>1651597112571</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651597112571</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

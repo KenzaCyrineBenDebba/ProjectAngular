@@ -1,0 +1,63 @@
+<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-text">
+                    <h2>Transfer Money</h2>
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li><i class="icofont-simple-right"></i></li>
+                        <li>Transfer Money</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="create-information">
+<aside id="transferForm" class="panel">
+
+<form
+      (ngSubmit)="b1=getAccountBalance(transaction.account_id)"
+      (ngSubmit)="changeAccountBalanceById(b1-transaction.amount , transaction.account_id)"
+
+      (ngSubmit)="b2=getAccountBalance(TransactionsObject.toAccount)"
+      (ngSubmit)="changeAccountBalanceById(b2+transaction.amount , TransactionsObject.toAccount)"
+
+      (ngSubmit)="addTransaction(transaction.transaction_type = 'Transfer')"
+      (ngSubmit)="addTransaction(transaction.source = 'online')"
+      (ngSubmit)="addTransaction(transaction.status = 'success')"
+      (ngSubmit)="addTransaction(transaction.reason_code = 'Transfer Transaction Successful')"
+      (ngSubmit)="addTransaction(transaction.created_at = this.created_at.substring(0, this.created_at.length - 1) )"
+      (ngSubmit)="addTransaction(transaction)">
+
+
+<div class="row" class="col-md-6">
+<label>Transfer From</label>
+    <input name ="account_id" type="number" required   placeholder="account_id"   [(ngModel)]="transaction.account_id" >
+    <!--  -->
+</div>
+
+    <div class="row" class="col-md-6">
+        <label>Amount To Transfer</label>
+        <input name ="amount" type="number" required   placeholder="amount"  [(ngModel)]="transaction.amount">
+        <!--  -->
+
+    </div>
+
+    <div class="row" class="col-md-6">
+        <label>Transfer To</label>
+        <input name ="toAccount" type="number" required   placeholder="toAccount" [(ngModel)]="TransactionsObject.toAccount">
+        <!--  -->
+
+    </div>
+
+
+
+    <button class="btn btn-success"  type="submit"  >save</button>
+    </form>
+
+</aside>
+</div>
+

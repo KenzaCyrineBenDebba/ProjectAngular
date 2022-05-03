@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9769bc45-0a53-452d-82cc-f223971fecda" name="Changes" comment="update" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Amira" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/peof-ng/src/app/components/pages/deposit/deposit.component.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/peof-ng/src/app/components/pages/deposit/deposit.component.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/peof-ng/src/app/app-routing.module.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/peof-ng/src/app/shared/Service/transaction.service.ts" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="286Qeo7KO5XKLakQCgGaLtGnmVr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="ts.external.directory.path" value="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\peof-ng\src\app\components\pages\transfer" />
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\peof-ng\src\app\components\pages" />
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\peof-ng\src\app\shared\pipe" />
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\peof-ng\src\app" />
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\src\assets\images\flags" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\peof-ng\src\app\components\pages" />
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\src\app\views\pages" />
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\src\app\shared\Service" />
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\src\app\shared\Model" />
+      <recent name="C:\Users\BEN DEBBA\Desktop\matieres\4eme\pidev 4inf\back\template\demo1\src\app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (nobleui-angular)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9769bc45-0a53-452d-82cc-f223971fecda" name="Changes" comment="" />
+      <created>1650534653963</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650534653963</updated>
+      <workItem from="1650534655273" duration="102444000" />
+      <workItem from="1651220148426" duration="5886000" />
+      <workItem from="1651250900051" duration="43742000" />
+      <workItem from="1651406882911" duration="4329000" />
+      <workItem from="1651417643338" duration="3761000" />
+      <workItem from="1651426146995" duration="1097000" />
+      <workItem from="1651427281367" duration="934000" />
+      <workItem from="1651428276203" duration="791000" />
+      <workItem from="1651430898800" duration="50365000" />
+      <workItem from="1651572705595" duration="6572000" />
+      <workItem from="1651594617931" duration="120000" />
+      <workItem from="1651596404223" duration="537000" />
+    </task>
+    <task id="LOCAL-00001" summary="//">
+      <created>1651259061299</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651259061299</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <created>1651259586085</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651259586085</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <created>1651259672410</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651259672410</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <created>1651259908766</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651259908766</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <created>1651411994094</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651411994094</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update">
+      <created>1651420727250</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651420727250</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update">
+      <created>1651426250952</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651426250952</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update">
+      <created>1651426959699</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651426959699</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update">
+      <created>1651578546364</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651578546364</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update">
+      <created>1651596794735</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651596794735</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="//" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+</project>
